@@ -6,7 +6,8 @@
 
 * In the industry, the ordinary process to do calories detection contains 2 major steps. Food-item identification and food calories estimation.
 
-*Food-item Identification:* To identify what’s on the plate, we need to instance-segment the given food image into the possible food categories. Mask R-CNN would be a matching solution to instance segmentation. Mask R-CNN takes an image and spits out three outputs, masks of the identified items, bounding boxes and classes for each mask detected
+* Food-item Identification:* To identify what’s on the plate, we need to instance-segment the given food image into the possible food categories. Mask R-CNN would be a matching solution to instance segmentation. Mask R-CNN takes an image and spits out three outputs, masks of the identified items, bounding boxes and classes for each mask detected.
+
 *Food Calorie Estimation:* As the same food can be taken at different depths to generate different picture sizes. we need a method to calculate calorie or estimate the size of the food in a real-world scenario. After we get the desired food items detected along with their masks, we need the real object sizes. So, we take a referencing approach that references the food-objects to the size of the pre-known object to extract the actual size of the food contained in that specific image.
 
 **Related Work:**
@@ -25,6 +26,7 @@ noisy training images,
 * Those 10 categories vary from the size and the color and even the food category. We use them as a perfect sample of food dataset.
 
 **Models:** 
+
 (1)	CNN 2D:
 * Convolutional Neural Network is very good at image classification for mainly two reasons:
   1.	No need for manual feature extraction: A CNN convolves learned features with input data, and uses 2D convolutional layers. How CNN work is by extracting features directly from images and the key features are not pretrained; they are learned while the network trains on a collection of images. It is the automated feature extraction that makes CNNs highly suited for and accurate for computer vision tasks such as image classification. 
@@ -38,14 +40,14 @@ noisy training images,
 
 (3) Hyperparameters:
 * Activation function: ReLU
-  -- In order to use stochastic gradient descent with backpropagation of errors to train deep neural networks, an activation function is needed that looks and acts like a linear function, but is, in fact, a nonlinear function allowing complex relationships in the data to be learned.
-  -- The function must also provide more sensitivity to the activation sum input and avoid easy saturation. The solution is to use ReLU.
+  - In order to use stochastic gradient descent with backpropagation of errors to train deep neural networks, an activation function is needed that looks and acts like a linear function, but is, in fact, a nonlinear function allowing complex relationships in the data to be learned.
+  - The function must also provide more sensitivity to the activation sum input and avoid easy saturation. The solution is to use ReLU.
 
 * For the output layer, we chose ‘softmax’ as the activation function. It can predict a multinomial probability distribution so it’s usually used in multi-class classification problems.
 
 * Loss function: categorical_crossentropy
-  -- It can compute the crossentropy loss between the labels and predictions.
-  -- It is usually used when there are two or more label classes so we use it here. 
+  - It can compute the crossentropy loss between the labels and predictions.
+  - It is usually used when there are two or more label classes so we use it here. 
 
 (3)	Data augmentation
 * The benefits of data augmentation are two: The first is the ability to generate ‘more data’ from limited data. The second one is to avoid overfitting: This occurs because the model memorizes the full dataset instead of only learning the main concepts underlying the problem.

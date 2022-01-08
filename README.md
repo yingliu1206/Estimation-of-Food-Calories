@@ -6,9 +6,9 @@
 
 * In the industry, the ordinary process to do calories detection contains 2 major steps. Food-item identification and food calories estimation.
 
- - *Food-item Identification:* To identify what’s on the plate, we need to instance-segment the given food image into the possible food categories. Mask R-CNN would be a matching solution to instance segmentation. Mask R-CNN takes an image and spits out three outputs, masks of the identified items, bounding boxes and classes for each mask detected.
+  - *Food-item Identification:* To identify what’s on the plate, we need to instance-segment the given food image into the possible food categories. Mask R-CNN would be a matching solution to instance segmentation. Mask R-CNN takes an image and spits out three outputs, masks of the identified items, bounding boxes and classes for each mask detected.
 
- - *Food Calorie Estimation:* As the same food can be taken at different depths to generate different picture sizes. we need a method to calculate calorie or estimate the size of the food in a real-world scenario. After we get the desired food items detected along with their masks, we need the real object sizes. So, we take a referencing approach that references the food-objects to the size of the pre-known object to extract the actual size of the food contained in that specific image.
+  - *Food Calorie Estimation:* As the same food can be taken at different depths to generate different picture sizes. we need a method to calculate calorie or estimate the size of the food in a real-world scenario. After we get the desired food items detected along with their masks, we need the real object sizes. So, we take a referencing approach that references the food-objects to the size of the pre-known object to extract the actual size of the food contained in that specific image.
 
 **Related Work:**
 * In the original paper that introduced the dataset used in this project, Bossard  employed a weakly supervised mining method that relied on Random Forests (RFs) to mine discriminative regions in images(accuracy of 50.76%)
